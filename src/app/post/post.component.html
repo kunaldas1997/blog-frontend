@@ -1,0 +1,26 @@
+<div class="navigation">
+    <div class="top-back" (click)="back()">
+        <span><i class="fa-solid fa-arrow-left"></i></span>
+    </div>
+    <div class="header">
+        <span>Kunal's Blog</span>
+    </div>
+    <div class="about-page" (click)="open()">
+        <i class="fa-regular fa-user"></i>
+    </div>
+</div>
+
+<div class="sidebar">
+    <!-- To be added Later -->
+    <div class="back" (click)="back()">
+        <span><i class="fa-solid fa-arrow-left"></i>Back</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="post" *ngIf="this.jsonData">
+        <h1>{{this.jsonData.title}}</h1>
+        <p [innerHTML]="this.jsonData.post_content"></p>
+    </div>
+
+</div>

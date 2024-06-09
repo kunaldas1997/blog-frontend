@@ -1,0 +1,207 @@
+@use "../colors.scss";
+
+
+@mixin main-adjust {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+@mixin adjust {
+    @include main-adjust();
+
+    >input {
+        border: 1px solid colors.$primary-color;
+        background-color: #fff1e6;
+        width: 75%;
+        border-radius: 0px 15px 15px 0px;
+        color: colors.$primary-color;
+
+    }
+
+    >label {
+        border: 1px solid colors.$primary-color;
+        background: white;
+        padding: 20px;
+        border-radius: 15px 0px 0px 15px;
+    }
+}
+
+@media screen and (min-width: 1340px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        height: 100dvh;
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width:35%;
+            height: 40%;
+            border: 1px solid colors.$primary-color;
+            border-radius: 25px;
+            justify-content: space-around;
+            align-items: center;
+
+            >form {
+                width: 100%;
+            }
+
+            .email-field,
+            .pass-field {
+                @include adjust();
+            }
+
+            .submit-btn {
+                @include main-adjust();
+                justify-content: center;
+
+                button {
+                    padding: 15px 25px;
+                    border: 2px solid colors.$primary-color;
+                    border-radius: 15px;
+                    color: colors.$primary-color;
+                    font-weight: 700;
+                    background-color: #fff1e6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1340px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        height: 100dvh;
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 40%;
+            border: 1px solid colors.$primary-color;
+            border-radius: 25px;
+            justify-content: space-around;
+            align-items: center;
+
+            >form {
+                width: 100%;
+            }
+
+            .email-field,
+            .pass-field {
+                @include adjust();
+            }
+
+            .submit-btn {
+                @include main-adjust();
+                justify-content: center;
+
+                button {
+                    padding: 15px 25px;
+                    border: 2px solid colors.$primary-color;
+                    border-radius: 15px;
+                    color: colors.$primary-color;
+                    font-weight: 700;
+                    background-color: #fff1e6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1000px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        height: 100dvh;
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 40%;
+            border: 1px solid colors.$primary-color;
+            border-radius: 25px;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px;
+
+            >form {
+                width: 100%;
+            }
+
+            .email-field,
+            .pass-field {
+                @include adjust();
+            }
+
+            .submit-btn {
+                @include main-adjust();
+                justify-content: center;
+
+                button {
+                    padding: 15px 25px;
+                    border: 2px solid colors.$primary-color;
+                    border-radius: 15px;
+                    color: colors.$primary-color;
+                    font-weight: 700;
+                    background-color: #fff1e6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        height: 100dvh;
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 40%;
+            border: 1px solid colors.$primary-color;
+            border-radius: 25px;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10%;
+
+            >form {
+                width: 100%;
+            }
+
+            .email-field,
+            .pass-field {
+                @include adjust();
+            }
+
+            .submit-btn {
+                @include main-adjust();
+                justify-content: center;
+
+                button {
+                    padding: 15px 25px;
+                    border: 2px solid colors.$primary-color;
+                    border-radius: 15px;
+                    color: colors.$primary-color;
+                    font-weight: 700;
+                    background-color: #fff1e6;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<div class="navigation">
+    <div class="top-back" (click)="back()">
+        <span><i class="fa-solid fa-arrow-left"></i></span>
+    </div>
+    <div class="header">
+        <span>About Me</span>
+    </div>
+    <div class="empty"></div>
+</div>
+
+<div class="sidebar">
+    <!-- To be added Later -->
+    <div class="back" (click)="back()">
+        <span><i class="fa-solid fa-arrow-left"></i>Back</span>
+    </div>
+</div>
+
+<div class="about">
+    <div class="data">
+        <h1>About Me</h1>
+        <p>Hi Everyone! I am <b>{{name}}</b> and welcome to my Blog! I used to work as a Game developer at one of the
+            companies locally, for last 1.5 years. But it didn't catch my attention enough; May be environment, working
+            culture whatever it was. Now I have started learning MEAN stack, thus the result. I also have a hands-on
+            experience in C#(thanks to working in Game Development), Flutter, and several tools related to UI/UX. I
+            occasionally create pixel arts.</p>
+        <p>
+            <span>
+                <em>A Shameless self promotion! Yay!</em>
+            </span>
+        </p>
+        <p>I also do random photography, therefore, my subjects can be random shots of food, birds, sky, etc.</p>
+        <p>You can contact me with the following links</p>
+        <div class="social">
+            <ul>
+                <li class="one"><a href="#"><i class="fa-regular fa-envelope"></i>{{email}}</a></li>
+                <li class="two"><a href="#"><i class="fa-solid fa-phone"></i> {{contact}}</a></li>
+                <li class="three"><a href="{{linkedin}}"><i class="fa-brands fa-linkedin-in"></i>{{name}}</a></li>
+                <li class="four"><a href="{{instagram}}"><i class="fa-brands fa-instagram"></i>{{name}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

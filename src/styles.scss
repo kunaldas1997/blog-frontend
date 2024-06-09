@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@use './app/colors.scss';
+body{
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: colors.$color-1;
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: colors.$primary-color;
+    border-radius: 0px 10px 10px, 0px;
+    outline: 0 none;
+}
+
+textarea, input {
+    border-radius: 10px;
+}

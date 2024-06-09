@@ -1,0 +1,44 @@
+<div class="navigation">
+    <div class="header">
+        <span>Kunal's Blog</span>
+    </div>
+    <div class="search">
+        <input type="text" name="search" (input)="onInput($event)" placeholder="Start Typing..." autocomplete="off" />
+    </div>
+    <div class="result-panel" *ngIf="showPanel" id="result-panel">
+        <div class="search-data" *ngFor="let d of searchJson">
+            <div class="searchPane" [attr.data-post-id]="d._id" (click)="handleClick(d._id)">
+                <span>{{d.title}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="about-page" (click)="open()">
+        <i class="fa-regular fa-user"></i>
+    </div>
+</div>
+
+<div class="sidebar">
+    <!-- To be added Later -->
+    <span></span>
+</div>
+
+<div class="container">
+    <div class="dataArea">
+        <div *ngFor="let d of jsonData">
+            <div class="postClass" [attr.data-post-id]="d._id" (click)="handleClick(d._id)">
+                <div class="post_details">
+                    <h2>{{d.title}}</h2>
+                    <i class="fa-regular fa-user"></i>
+                    <span class="author">{{d.post_author.nickname}}</span>
+                    <span>|</span>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span class="category">{{d.post_category.category_name}}</span>
+                </div>
+                <summary>{{d.excerpt}}</summary>
+                <div class="date-info">
+                    <span>{{d.publish_date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
