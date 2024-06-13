@@ -1,0 +1,86 @@
+@use '../colors.scss';
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    height: 100dvh;
+    width: 100%;
+
+    #side_bar {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        border: 1px solid colors.$primary-color;
+        height: 100dvh;
+
+        #title {
+            padding: 50px 0px;
+            font-weight: 700;
+            color: colors.$primary-color;
+            font-size: 30px;
+        }
+
+        #menu {
+            margin: 50px 0px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+            .menu-item {
+
+                width: 50%;
+                text-align: center;
+                padding: 10px;
+                cursor: pointer;
+                text-decoration: none;
+                color: colors.$primary-color;
+                .tab {
+                    padding: 17px 0px;
+                }
+
+                .selected {
+                    padding: 17px 0px;
+                    background-color: colors.$primary-color;
+                    color: colors.$secondary-color;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+
+    #main_section {
+        width: 85%;
+    }
+}
+
+
+.no-view {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .no-view {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-size: 700;
+            color: colors.$primary-color;
+        }
+    }
+}

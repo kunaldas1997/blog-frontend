@@ -1,4 +1,30 @@
-<p>dashboard works!</p>
+<div class="dashboard no-view">
+    <div id="side_bar">
+        <span id="title">
+            Kunal's Blog
+        </span>
+        <div id="menu">
+            <div class="menu-item" (click)="selected(0, 'home')">
+                <div class="tab" [ngClass]="{'selected': selectedDiv === 0}">Home</div>
+            </div>
+            <div class="menu-item" (click)="selected(1, 'create')">
+                <div class="tab" [ngClass]="{'selected': selectedDiv === 1}">Create</div>
+            </div>
+            <div class="menu-item" (click)="selected(2, 'contact')">
+                <div class="tab" [ngClass]="{'selected': selectedDiv === 2}">Contact</div>
+            </div>
+        </div>
+    </div>
+    <div id="main_section">
+        <div id="header">
 
-<router-outlet>
-</router-outlet>
+        </div>
+        <div id="render">
+            <router-outlet></router-outlet>
+            <router-outlet name="renSec"></router-outlet>
+        </div>
+    </div>
+</div>
+<div class="mobile-only">
+    <p> Mobile not Supported. Wait for Mobile App</p>
+</div>
