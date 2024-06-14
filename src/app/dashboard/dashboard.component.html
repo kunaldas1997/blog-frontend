@@ -17,9 +17,17 @@
     </div>
     <div id="main_section">
         <div id="header">
-
+            <div class="user-acc">
+                {{this.firstChar}}
+            </div>
+            <div class="username">
+                {{this.userName}}
+            </div>
         </div>
         <div id="render">
+            <div class="message">
+                {{this.message}}
+            </div>
             <router-outlet></router-outlet>
             <router-outlet name="renSec"></router-outlet>
         </div>

@@ -1,3 +1,12 @@
 <div class="dash-home">
-    <p>This is DashBoardHome</p>
+    <div class="recent-posts">
+        <div class="sec-title">
+            <span>Recent Posts</span>
+        </div>
+        <div class="data" *ngFor="let title of titleList">
+            <div class="post-title">
+                <span>{{this.title| titleTrunct:30}}</span>
+            </div>
+        </div>
+    </div>
 </div>

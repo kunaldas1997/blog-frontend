@@ -51,7 +51,11 @@ export class HomeComponent {
       });
 
       this.jsonData = this.formattedData;
+
+      console.log(this.jsonData);
     });
+
+    
   }
 
   formatDate(dateTime: string): string {

@@ -12,9 +12,27 @@ import { RouterModule, Router, RouterLink, RouterLinkActive } from '@angular/rou
 })
 export class DashboardComponent {
   selectedDiv: number = 0;
+  firstChar: string = '';
+  userName: string = 'Kunal Das';
+  message: string = '';
+
+  setMessage(): void {
+    let time = new Date().getHours();
+
+    if (time >= 0 && time < 12) {
+      this.message = `Good Day, ${this.userName}`;
+    } else if (time > 12 && time < 23){
+      this.message = `Good Night, ${this.userName}`;
+    }
+  }
+
+  extractFirstChar(): void {
+    this.firstChar = this.userName.charAt(0);
+  }
 
   ngOnInit() {
-
+    this.setMessage();
+    this.extractFirstChar();
     if (localStorage.getItem('current') != null) {
 
       this.selectedDiv = (localStorage.getItem('current') as unknown) as number;
@@ -24,12 +42,12 @@ export class DashboardComponent {
 
     this.selected(0, 'home');
   }
+  
   constructor(private router: Router) { }
 
   selected(divNum: number, page: string) {
 
     if (this.selectedDiv !== divNum) {
-      console.log(this.selectedDiv, divNum);
       localStorage.setItem('current', this.selectedDiv.toString());
       this.selectedDiv = this.selectedDiv === divNum ? 0 : divNum;
       this.router.navigate(
