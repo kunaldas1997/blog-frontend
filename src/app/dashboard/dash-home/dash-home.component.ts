@@ -6,17 +6,17 @@ import { CommonModule } from '@angular/common';
 import { TitleTrunctPipe } from "./title-trunct.pipe";
 
 @Component({
-    selector: 'app-dash-home',
-    standalone: true,
-    templateUrl: './dash-home.component.html',
-    styleUrl: './dash-home.component.scss',
-    imports: [CommonModule, TitleTrunctPipe]
+  selector: 'app-dash-home',
+  standalone: true,
+  templateUrl: './dash-home.component.html',
+  styleUrl: './dash-home.component.scss',
+  imports: [CommonModule, TitleTrunctPipe]
 })
 export class DashHomeComponent {
 
   jsonData: any;
   formattedData: any;
-  titleList: string[] = [];
+  titleList: any[] = [];
   constructor(private dataFetch: DashServiceService) { }
 
   getData(): void {
@@ -28,6 +28,7 @@ export class DashHomeComponent {
       });
 
       this.jsonData = this.formattedData;
+      console.log(this.jsonData);
       this.extractTitle();
     });
   }
@@ -44,13 +45,16 @@ export class DashHomeComponent {
 
   extractTitle(): void {
     for (let i in this.jsonData) {
-      this.titleList.push(this.jsonData[i].title);
+      var title = this.jsonData[i].title;
+      var date = this.jsonData[i].publish_date;
+
+      this.titleList.push({ title: title, date: date });
     }
     console.log(this.titleList);
   }
 
   ngOnInit() {
     this.getData()
-    
+
   }
 }

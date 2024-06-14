@@ -3,10 +3,30 @@
         <div class="sec-title">
             <span>Recent Posts</span>
         </div>
-        <div class="data" *ngFor="let title of titleList">
-            <div class="post-title">
-                <span>{{this.title| titleTrunct:30}}</span>
+        <div class="header">
+            <div class="head">
+                <div class="post-title">
+                    <span>Title</span>
+                </div>
+                <div class="post-date">
+                    <span>Last Updated</span>
+                </div>
             </div>
+        </div>
+        <div class="data" *ngFor="let d of titleList">
+            <div class="post">
+                <div class="post-title">
+                    <span>{{this.d.title| titleTrunct:30}}</span>
+                </div>
+                <div class="post-date">
+                    <span>{{this.d.date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts">
+        <div class="sec-title">
+            <span>Contacts</span>
         </div>
     </div>
 </div>

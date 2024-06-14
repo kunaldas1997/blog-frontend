@@ -1,0 +1,92 @@
+@use '../../colors.scss';
+
+@mixin common {
+    border: 1px solid colors.$primary-color;
+    color: colors.$primary-color;
+    height: 5rem;
+}
+
+@mixin Input {
+    @include common();
+    background-color: colors.$color-1;
+    border: none;
+    height: 100%;
+    width: 98%;
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.create-post {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    .editor {
+        width: 70%;
+        height: 85.2dvh;
+        border: 1px solid colors.$primary-color;
+        padding: 1rem;
+        margin: 2rem;
+        border-radius: 15px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 100%;
+
+            input {
+                width: 99.1%;
+                margin: 0px 0px 30px 0px;
+            }
+
+            .title {
+                #title {
+                    @include Input();
+                    font-weight: 700;
+                    font-size: 4rem;
+                }
+            }
+
+            .excerpt {
+                #excerpt {
+                    @include Input();
+                    font-weight: 400;
+                    font-size: 2rem;
+                }
+            }
+
+            .content {
+                height: 75%;
+
+                #content {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    @include Input();
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .category {
+                #category {
+                    @include Input();
+                }
+            }
+
+            .submit-btn {
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    height: 50px;
+                    width: 160px;
+                    background-color: colors.$primary-color;
+                    border: none;
+                    color: colors.$color-1;
+                    border-radius: 10px;
+                }
+            }
+
+        }
+    }
+}

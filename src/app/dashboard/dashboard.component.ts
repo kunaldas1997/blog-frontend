@@ -40,7 +40,7 @@ export class DashboardComponent {
       this.selectedDiv = 0;
     }
 
-    this.selected(0, 'home');
+    this.selected(1, 'create');
   }
   
   constructor(private router: Router) { }
