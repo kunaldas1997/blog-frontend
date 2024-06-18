@@ -40,13 +40,12 @@ export class DashboardComponent {
       this.selectedDiv = 0;
     }
 
-    this.selected(1, 'create');
+    this.selected(0, 'home');
   }
   
   constructor(private router: Router) { }
 
   selected(divNum: number, page: string) {
-
     if (this.selectedDiv !== divNum) {
       localStorage.setItem('current', this.selectedDiv.toString());
       this.selectedDiv = this.selectedDiv === divNum ? 0 : divNum;

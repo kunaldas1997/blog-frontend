@@ -1,6 +1,6 @@
 <div class="create-post">
     <div class="editor">
-        <form [formGroup]="post" (ngSubmit)="onSubmit()">
+        <form [formGroup]="postData" (ngSubmit)="onSubmit()">
             <div class="title">
                 <input type="text" id="title" formControlName="title" placeholder="Title">
             </div>
@@ -9,10 +9,10 @@
             </div>
             <div class="content">
                 <textarea type="text" id="content" formControlName="post_content" placeholder="Content"
-                    [(ngModel)]="text" (input)="onInput()"></textarea>
+                    (input)="onInput()"></textarea>
             </div>
             <div class="category">
-                <input type="text" id="category" formControlName="excerpt" placeholder="Category">
+                <input type="text" id="category" formControlName="post_category" placeholder="Category">
             </div>
 
             <div class="submit-btn">

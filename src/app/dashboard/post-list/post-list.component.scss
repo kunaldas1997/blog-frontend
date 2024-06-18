@@ -1,0 +1,58 @@
+@use '../../colors.scss';
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80dvh;
+    margin: 100px;
+    border: 1px solid colors.$primary-color;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    .title {
+        width: 100%;
+        margin-top: 20px;
+        
+        .head {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0rem 1rem;
+            font-size: 25px;
+            font-weight: 500;
+            color: colors.$primary-color;
+            margin-bottom: 20px;
+        }
+    }
+
+    .data {
+        border: 1px solid colors.$primary-color;
+        padding: 20px 10px;
+        width: 95%;
+        margin: 20px 10px;
+        border-radius: 10px;
+
+        .dataComp {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem 3rem 0rem 0rem;
+
+            span {
+                font-size: 25px;
+                font-weight: 300;
+                color: colors.$primary-color;
+                text-align: left;
+            }
+
+            i {
+                &:hover {
+                    cursor: pointer;
+                    color: colors.$primary-color;
+                }
+            }
+
+        }
+    }
+}

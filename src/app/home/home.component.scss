@@ -1,6 +1,6 @@
 @use '../colors.scss';
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1440px) {
     .navigation {
         display: inline-flex;
         flex-direction: row;
@@ -11,6 +11,7 @@
         position: fixed;
         background-color: colors.$color_1;
         height: 4vh;
+
         >.header {
             width: 15%;
             font-weight: 600;
@@ -35,6 +36,7 @@
             align-items: center;
             justify-content: left;
             padding: 10px;
+
             >input {
                 width: 50%;
                 background-color: colors.$color-1;
@@ -90,8 +92,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: stretch;
-            width: 50%;
-
+            width: 75%;
+            margin-top: 1%;
             .postClass {
                 border: 1px solid colors.$primary-color;
                 border-radius: 25px;
@@ -158,7 +160,7 @@
 
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1000px) and (max-width: 1439px){
     .navigation {
         display: inline-flex;
         flex: auto;
@@ -174,7 +176,7 @@
             font-size: 1.5rem;
             color: colors.$primary-color;
             text-decoration: none;
-
+            height: 2%;;
         }
 
 
@@ -224,7 +226,8 @@
             justify-content: center;
             cursor: pointer;
             padding: 1em;
-            >.fa-user{
+
+            >.fa-user {
                 font-size: larger;
             }
         }
@@ -236,7 +239,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding-top: 15vh;
+        
 
         .dataArea {
             display: flex;
@@ -244,13 +247,299 @@
             justify-content: center;
             align-items: stretch;
             width: 100%;
-
+            margin-top: 20%;
             .postClass {
                 border: 1px solid colors.$primary-color;
                 border-radius: 25px;
                 padding: 3.5rem;
                 margin: 1rem;
                 cursor: pointer;
+                
+
+                >.post_details {
+
+                    >h2 {
+                        color: colors.$primary-color;
+                        margin-top: 0px;
+                    }
+
+                    >.fa-user {
+                        font-size: x-small;
+                        color: grey;
+                        margin-right: 5px;
+                    }
+
+                    >.author {
+                        padding: 1em 0.5em 1em 0px;
+                        color: colors.$primary_color;
+                        font-weight: 600;
+                    }
+
+                    .fa-layer-group {
+                        margin-left: 5px;
+                        color: grey;
+                        font-size: x-small;
+                    }
+
+                    >.category {
+                        padding: 0.5em;
+                        color: colors.$primary_color;
+
+                    }
+                }
+
+                >.date-info {
+                    margin: 1em 1em 0em 0em;
+                    color: colors.$primary-color;
+                    font-weight: 500;
+                }
+
+                >summary {
+                    padding: 10px 10px 10px 0px;
+                }
+            }
+        }
+
+    }
+}
+@media screen and (min-width: 751px) and (max-width: 999px){
+    .navigation {
+        display: inline-flex;
+        flex: auto;
+        padding: 30px 4px 30px 4px;
+        width: 100%;
+        position: fixed;
+        align-items: center;
+        justify-content: space-around;
+        background-color: colors.$color_1;
+
+        >.header {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: colors.$primary-color;
+            text-decoration: none;
+            height: 2%;;
+        }
+
+
+        >.search {
+            display: flex;
+            width: 60%;
+            align-items: center;
+            justify-content: left;
+
+            >input {
+                width: 100%;
+                background-color: colors.$color-1;
+                border: 0.5px solid colors.$primary-color;
+                margin: 1rem;
+                padding: 1rem;
+                border-radius: 25px;
+
+            }
+
+        }
+
+        >.result-panel {
+            position: absolute;
+            left: 27.5%;
+            top: 100%;
+            width: 50%;
+            height: 250px;
+            border: 1px solid colors.$primary-color;
+            background: colors.$color-1;
+            z-index: 100;
+            overflow-y: auto;
+            border-radius: 10px;
+
+            >.search-data {
+                font-weight: 700;
+
+                >.searchPane {
+                    padding: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        >.about-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 1em;
+
+            >.fa-user {
+                font-size: larger;
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+
+        .dataArea {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            width: 100%;
+            margin-top: 20%;
+            .postClass {
+                border: 1px solid colors.$primary-color;
+                border-radius: 25px;
+                padding: 3.5rem;
+                margin: 1rem;
+                cursor: pointer;
+                
+
+                >.post_details {
+
+                    >h2 {
+                        color: colors.$primary-color;
+                        margin-top: 0px;
+                    }
+
+                    >.fa-user {
+                        font-size: x-small;
+                        color: grey;
+                        margin-right: 5px;
+                    }
+
+                    >.author {
+                        padding: 1em 0.5em 1em 0px;
+                        color: colors.$primary_color;
+                        font-weight: 600;
+                    }
+
+                    .fa-layer-group {
+                        margin-left: 5px;
+                        color: grey;
+                        font-size: x-small;
+                    }
+
+                    >.category {
+                        padding: 0.5em;
+                        color: colors.$primary_color;
+
+                    }
+                }
+
+                >.date-info {
+                    margin: 1em 1em 0em 0em;
+                    color: colors.$primary-color;
+                    font-weight: 500;
+                }
+
+                >summary {
+                    padding: 10px 10px 10px 0px;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .navigation {
+        display: inline-flex;
+        flex: auto;
+        padding: 30px 4px 30px 4px;
+        width: 100%;
+        position: fixed;
+        align-items: center;
+        justify-content: space-around;
+        background-color: colors.$color_1;
+
+        >.header {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: colors.$primary-color;
+            text-decoration: none;
+            height: 2%;;
+        }
+
+
+        >.search {
+            display: flex;
+            width: 60%;
+            align-items: center;
+            justify-content: left;
+
+            >input {
+                width: 100%;
+                background-color: colors.$color-1;
+                border: 0.5px solid colors.$primary-color;
+                margin: 1rem;
+                padding: 1rem;
+                border-radius: 25px;
+
+            }
+
+        }
+
+        >.result-panel {
+            position: absolute;
+            left: 27.5%;
+            top: 100%;
+            width: 50%;
+            height: 250px;
+            border: 1px solid colors.$primary-color;
+            background: colors.$color-1;
+            z-index: 100;
+            overflow-y: auto;
+            border-radius: 10px;
+
+            >.search-data {
+                font-weight: 700;
+
+                >.searchPane {
+                    padding: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        >.about-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 1em;
+
+            >.fa-user {
+                font-size: larger;
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+
+        .dataArea {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            width: 100%;
+            margin-top: 30%;
+            .postClass {
+                border: 1px solid colors.$primary-color;
+                border-radius: 25px;
+                padding: 3.5rem;
+                margin: 1rem;
+                cursor: pointer;
+                
 
                 >.post_details {
 

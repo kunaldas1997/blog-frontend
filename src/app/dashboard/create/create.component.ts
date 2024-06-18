@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CreateService } from './create.service';
 
 @Component({
   selector: 'app-create',
@@ -10,23 +11,32 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class CreateComponent {
 
-  post = new FormGroup({
+  postData = new FormGroup({
     title: new FormControl(''),
     excerpt: new FormControl(''),
     post_content: new FormControl(''),
     post_category: new FormControl(''),
   })
 
+  jsonData: any;
+  constructor(private create: CreateService) { }
   text: string = '';
   onSubmit(): void {
+    try {
+      console.log(this.postData.value);
+      this.create.setPost('posts/', this.postData.value).subscribe((data: any) => {
+        this.jsonData = data;
 
+        this.postData.reset();
+        console.log(this.jsonData.message);
+      })
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   onInput(): void {
     const textArea = document.getElementById("content") as HTMLTextAreaElement;
-    // textArea.style.height = 'auto';
-    // textArea.style.height = textArea.scrollHeight + 'px';
-
     if (textArea.scrollHeight > 1118.5) {
       textArea.style.height = '1118.5px';
     }

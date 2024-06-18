@@ -28,7 +28,6 @@ export class DashHomeComponent {
       });
 
       this.jsonData = this.formattedData;
-      console.log(this.jsonData);
       this.extractTitle();
     });
   }
@@ -50,7 +49,6 @@ export class DashHomeComponent {
 
       this.titleList.push({ title: title, date: date });
     }
-    console.log(this.titleList);
   }
 
   ngOnInit() {

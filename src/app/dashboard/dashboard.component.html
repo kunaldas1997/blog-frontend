@@ -10,8 +10,11 @@
             <div class="menu-item" (click)="selected(1, 'create')">
                 <div class="tab" [ngClass]="{'selected': selectedDiv === 1}">Create</div>
             </div>
-            <div class="menu-item" (click)="selected(2, 'contact')">
-                <div class="tab" [ngClass]="{'selected': selectedDiv === 2}">Contact</div>
+            <div class="menu-item" (click)="selected(2, 'post-list')">
+                <div class="tab" [ngClass]="{'selected': selectedDiv === 2}">Posts</div>
+            </div>
+            <div class="menu-item" (click)="selected(3, 'contact')">
+                <div class="tab" [ngClass]="{'selected': selectedDiv === 3}">Contact</div>
             </div>
         </div>
     </div>

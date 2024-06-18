@@ -1,0 +1,19 @@
+<div class="post-list">
+    <div class="title">
+        <div class="head">
+            <div class="post-title">
+                <span>Title</span>
+            </div>
+            <div class="post-action">
+                <span>Actions</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="data" *ngFor="let d of jsonData">
+        <div class="dataComp">
+            <span>{{d.title}}</span>
+            <i class="fa-solid fa-trash" (click)="deletePost(d._id)"></i>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/web-front",
+            "outputPath": "D:/Codes/Web/builds/dist/web-front",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
