@@ -7,7 +7,6 @@ export const routeGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   if (service.auth) {
-    console.log(service.auth);
     return service.auth;
   }
 

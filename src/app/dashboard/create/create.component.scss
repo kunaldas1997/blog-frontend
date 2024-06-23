@@ -19,7 +19,7 @@
 .create-post {
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
     .editor {
         width: 70%;
@@ -57,19 +57,58 @@
             }
 
             .content {
-                height: 75%;
+                height: 81%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                @include Input();
+                font-weight: 400;
+                font-size: 1.5rem;
+                overflow-y: auto;
+                scrollbar-width: 2px;
 
-                #content {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    @include Input();
-                    font-weight: 400;
-                    font-size: 1.5rem;
-                }
+            }
+
+            #content {
+                //display: none;
+            }
+
+
+
+        }
+    }
+
+    .options {
+        width: 15%;
+        height: 50%;
+        border: 1px solid colors.$primary-color;
+        padding: 1rem;
+        margin: 2rem;
+        border-radius: 15px;
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 100%;
+            align-items: center;
+            align-content: space-between;
+
+            input {
+                width: 100%;
+
             }
 
             .category {
+                border: 1px solid red;
+                width: 100%;
+                margin: 10px;
+                border: 1px solid colors.$primary-color;
+                border-radius: 15px;
+
                 #category {
                     @include Input();
+                    width: 90%;
+                    border-radius: 15px;
                 }
             }
 
@@ -84,9 +123,10 @@
                     border: none;
                     color: colors.$color-1;
                     border-radius: 10px;
+                    cursor: pointer;
                 }
             }
-
         }
     }
 }
+

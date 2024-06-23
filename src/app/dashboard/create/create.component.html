@@ -7,12 +7,21 @@
             <div class="excerpt">
                 <input type="text" id="excerpt" formControlName="excerpt" placeholder="Excerpt">
             </div>
-            <div class="content">
-                <textarea type="text" id="content" formControlName="post_content" placeholder="Content"
-                    (input)="onInput()"></textarea>
+            <div class="content" #content contenteditable="true" placeholder="Content" (keydown)="shortcuts($event)"
+                (input)="updateContent()">
             </div>
+
+
+            <textarea name="textArea" id="content" formControlName="post_content">{{contentHTML}}</textarea>
+        </form>
+    </div>
+
+    <!-- Submit Section -->
+    <div class="options">
+        <form [formGroup]="postData" (ngSubmit)="onSubmit()">
             <div class="category">
-                <input type="text" id="category" formControlName="post_category" placeholder="Category">
+                <input type="text" id="category" formControlName="post_category" placeholder="Category"
+                    (select)="onSubmit()">
             </div>
 
             <div class="submit-btn">
@@ -20,4 +29,6 @@
             </div>
         </form>
     </div>
+
+    <!-- End -->
 </div>

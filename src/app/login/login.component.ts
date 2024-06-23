@@ -4,6 +4,8 @@ import { LoginserviceService } from './loginservice.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { RouteGuardService } from '../route-guard.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashService } from '../dashboard/dash.service';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { RouteGuardService } from '../route-guard.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  constructor(private loginService: LoginserviceService, private router: Router, private routeGuard: RouteGuardService) { }
+  constructor(private loginService: LoginserviceService, private router: Router, private routeGuard: RouteGuardService, private dash: DashService) { }
   jsonData: any;
 
 
@@ -23,9 +25,9 @@ export class LoginComponent {
     try {
       this.loginService.getToken('user/login', this.login.value).subscribe((data: any) => {
         this.jsonData = data;
-        console.log(this.routeGuard.auth);
         if (this.jsonData.hasOwnProperty('token')) {
           sessionStorage.setItem('token', this.jsonData.token);
+          this.dash.userNickName = this.jsonData.user.nickname;
           this.routeGuard.setAuth(true);
           this.router.navigate(['/db']);
         } else {

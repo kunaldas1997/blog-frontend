@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { DashService } from './dash.service';
 
 
 @Component({
@@ -11,9 +12,11 @@ import { RouterModule, Router, RouterLink, RouterLinkActive } from '@angular/rou
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  constructor(private router: Router, private dash: DashService) { }
+
   selectedDiv: number = 0;
   firstChar: string = '';
-  userName: string = 'Kunal Das';
+  userName: string = this.dash.userNickName;
   message: string = '';
 
   setMessage(): void {
@@ -21,7 +24,7 @@ export class DashboardComponent {
 
     if (time >= 0 && time < 12) {
       this.message = `Good Day, ${this.userName}`;
-    } else if (time > 12 && time < 23){
+    } else if (time > 12 && time < 23) {
       this.message = `Good Night, ${this.userName}`;
     }
   }
@@ -42,8 +45,7 @@ export class DashboardComponent {
 
     this.selected(0, 'home');
   }
-  
-  constructor(private router: Router) { }
+
 
   selected(divNum: number, page: string) {
     if (this.selectedDiv !== divNum) {
