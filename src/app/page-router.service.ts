@@ -9,7 +9,7 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class PageRouterService {
-  private apiUrl = "https://backend-423211.ue.r.appspot.com/api/posts";
+  private apiUrl = "http://localhost:8080/api/posts";
   jsonData: any;
 
   constructor(private http: HttpClient, private router: Router, private storage: StorageService) { }

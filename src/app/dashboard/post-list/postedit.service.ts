@@ -8,7 +8,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class PosteditService {
 
 
-  private apiURL = 'https://backend-423211.ue.r.appspot.com/api/';
+  private apiURL = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 

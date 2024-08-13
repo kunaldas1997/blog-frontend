@@ -6,7 +6,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginserviceService {
-  private apiURL = 'https://backend-423211.ue.r.appspot.com/';
+  private apiURL = 'http://localhost:8080/';
   constructor(private http: HttpClient) { }
 
   jsonResponse: any;
